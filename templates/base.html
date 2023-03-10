@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django forms</title>
+    {% load static %}
+    {% load crispy_forms_tags %}
+    <link rel="stylesheet" href={% static "bootstrap-5.2.3-dist/css/bootstrap.css" %}>
+    <style>
+        form{
+        width : 40%;
+        margin: auto
+        }
+        form p{
+        display: flex;
+        flex-direction:column;
+        }
+        form p label{
+        color:#dc1700;
+        margin-bottom:5px;
+        font-size:20px;
+        }
+        form p input{
+            height: 40px;
+            border:unset;
+            color: rgba(41,183,255,0.86);
+            background-color: rgba(102,255,61,0.86);
+        }
+        form input{
+            width:60%;
+            height:40px;
+            border:unset;
+            border-radius: 10px;
+            cursor:pointer;
+            background-color: coral;
+            color: rgba(165,178,255,0.86);
+        }
+    </style>
+</head>
+<body>
+<section class="navigation-section">
+<div class="navigation-section-container">
+<nav class="navigation">
+    <a href="{% url 'my-home' %}"><button>Home</button></a>
+    <a href=""><button>About</button></a>
+    <a href=""><button>Gallery</button></a>
+    <a href="{% url 'user-registration' %}"><button>Register</button></a>
+    <a href="{% url 'user-login' %}"><button>Login</button></a>
+    <a href="{% url 'user-logout' %}"><button>Logout</button></a>
+
+      </nav>
+   </div>
+</section>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
